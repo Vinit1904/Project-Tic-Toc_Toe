@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { GameComponent } from './game/game.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GameComponent } from './game/game.component';
     LoginComponent,
     SignupComponent,
     ForgotComponent,
-    GameComponent
+    GameComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { GameComponent } from './game/game.component'
-
+import { ErrorComponent } from './error/error.component'
 
 const routes: Routes = [
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'forgot-password', component: ForgotComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  //{ path: '**', component: PageNotFoundComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

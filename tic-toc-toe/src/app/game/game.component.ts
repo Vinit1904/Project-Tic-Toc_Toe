@@ -98,13 +98,13 @@ export class GameComponent implements OnInit {
       //console.log('Checking game state');
       var userButtons = buttonsWith('X');
       if (isWin(userButtons)) {
-        console.log('Player has won!');
+        alert('Player has won!');
         lockGame();
         return true;
       }
       var computerButtons = buttonsWith('O');
       if (isWin(computerButtons)) {
-        console.log('Computer has won!');
+        alert('Computer has won!');
         lockGame();
         return true;
       }
@@ -192,7 +192,6 @@ export class GameComponent implements OnInit {
 
     function button_onclick() {
       this.innerText = "X";
-      this.disabled = "disabled";
       if (isGameOver()) return;
       if (!computerMove()) {
         console.log('game is a draw!');

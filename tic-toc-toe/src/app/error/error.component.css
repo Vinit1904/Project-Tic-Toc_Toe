@@ -1,0 +1,23 @@
+body,
+        html {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .b1 {
+            height: 100vh;
+        }
+
+
+        .myclass {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            font-size: 44px;
+            margin-bottom: 15px;
+
+        }

@@ -14,9 +14,7 @@
     height: 70vh;
     width: 50vw;
     
-    background-color: slateblue;
-
-}
+   }
 
 .login-box{
        flex: 6;
@@ -28,7 +26,7 @@
 .logo-box{
     flex: 5;
     height: 100%;
-    background-color: springgreen;
+   
     }
 
 
@@ -36,8 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:skyblue;
-    color: royalblue;
+   color: gray;   
 }
 
 .submit{
