@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
 
     const data1 = this.form.value;
 
-    const url = 'http://localhost:5600/signup';
+    const url = 'http://localhost :5600/signup';
 
     const result: any = await this.http.post(url, data1).toPromise();
 

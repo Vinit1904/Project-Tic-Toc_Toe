@@ -47,13 +47,9 @@ export class LoginComponent implements OnInit {
   async loginHere() {
     const data = this.loginform.value;
 
-    const url = 'http://localhost:5600/login';
+    const url = 'http://localhost :5600/login';
 
-    const result: any = await this.http.post(url, data).toPromise()
-    result.then((data:any)=>{
-      console.log(data);
-    });
-    
+    const result: any = await this.http.post(url, data).toPromise();
 
     if (result.opr) {
       //sesssion manangemt
