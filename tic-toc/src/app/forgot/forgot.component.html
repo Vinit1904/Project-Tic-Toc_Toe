@@ -1,0 +1,110 @@
+<div class="container-fluid ">
+    <div class="row mbox-wrap ">
+
+        <div class="col-12 col-md-6 mx-0 mbox">
+            <!--logo-->
+            <div class="logo-box d-none d-xl-block">
+                <img src="assets/tic.gif" alt="" srcset="">
+            </div>
+
+
+
+
+
+
+            <!--Login-->
+            <div class="login-box bg-warning ">
+                <div class="heading p-1">
+                    <h1>Forgot Password</h1>
+                </div>
+
+
+
+                <div class="bg-light mx-1 mt-2" [formGroup]="forgot">
+
+                    <!------------------------------form----------------------->
+                    <div class="form-group">
+                        <!------------------------------input-email----------------------->
+                        <label for="Email">Email:</label>
+                        <input type="email"
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Email" formControlName="email">
+                        <!--------------------------validation if invalid----------------------->
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                            <div *ngIf="email.errors.required">
+                                <small>Please insert a valid email address</small>
+                            </div>
+
+                            <div *ngIf="email.errors && email.errors.pattern">
+                                <small>
+                                    Invalid email address
+                                </small>
+                            </div>
+                        </div>
+                        <!--------------------------validation if valid----------------------->
+                        <div *ngIf="email.valid" class="text-success">
+                            <small>valid</small>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mt-2 ">
+                        <label for="Password">Password:</label>
+                        <input type="password "
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Password" formControlName="password">
+
+                        <!----------------------------Password-Input- Validation-IF-invalid--------------------->
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                            <div *ngIf="password.errors.required">
+                                <small>Please insert a valid Password</small>
+                            </div>
+
+                            <div *ngIf="password.errors.minlength || password.errors.maxlength">
+                                <small>
+                                    Password allows between 3 to 12 character
+                                </small>
+                            </div>
+                        </div>
+
+                        <!----------------------------VALID-->
+                        <div *ngIf="!password.errors" class="text-success">
+                            <small>valid</small>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mt-2 ">
+                        <label for="Password">Confirm Password:</label>
+                        <input type="password "
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Password">
+                    </div>
+
+
+
+                    <button type="button" class="btn btn-primary btn-block submit"
+                        style="font-size: 20px; font-weight: bold;" (click)="ForgotHere()">Submit</button>
+                </div>
+
+                <!------------------------------forgotpassword----------------------->
+                <div style="display: flex; justify-content: center;">
+                    <div>
+                        <h6><a routerLink="." (click)="RegisterPage()" href="">Login</a> </h6>
+                    </div>
+
+                </div>
+
+
+                <!------------------------------Google faceebook signup----------------------->
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

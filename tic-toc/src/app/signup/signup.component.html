@@ -1,0 +1,151 @@
+<div class="container-fluid ">
+    <div class="row mbox-wrap ">
+
+        <div class="col-12 col-md-6 mx-0 mbox">
+            <!--logo-->
+            <div class="logo-box d-none d-xl-block">
+                <img src="assets/tic.gif" alt="" srcset="">
+            </div>
+
+
+
+
+            <!--Login-->
+            <div class="login-box bg-warning ">
+                <div class="heading p-1">
+                    <h3>Create Your Account</h3>
+                </div>
+
+                <!------------------------------form----------------------->
+
+
+                <div class="bg-light mx-1 mt-2" [formGroup]="form">
+
+                    <!--------------------User_Name-------------------------------->
+                    <div class="row form-group">
+
+                        <div class="col">
+                            <!----------------------input-------------------->
+                            <label for="Email">Username:</label>
+                            <input type="text"
+                                class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                                formControlName="username" required minlength="4" maxlength="12">
+
+                            <!----------------------------Email-Input- Validation-IF-invalid--------------------->
+                            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+                                <div *ngIf="username.errors.required">
+                                    <small>Please insert a valid email address</small>
+
+                                </div>
+
+                                <div *ngIf="username.errors || username.errors.minlength || username.errors.maxlegth">
+                                    <small>
+                                        Username allows between 3 to 12 character
+                                    </small>
+
+                                </div>
+                            </div>
+                            <!----------------------------Email-Input- Validation-IF-valid--------------------->
+                            <div *ngIf="!username.errors" class="text-success">
+                                <small>valid</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!----------------Email--------------------->
+                    <div class="form-group">
+
+                        <!----------------form-Input--------------------->
+                        <label for="Email">Email:</label>
+                        <input type="email"
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Email" formControlName="email">
+
+                        <!----------------Validation if invalid--------------------->
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                            <div *ngIf="email.errors.required">
+                                <small>Please insert a valid email address</small>
+                            </div>
+
+                            <div *ngIf="email.errors.email">
+                                <small>
+                                    Invalid email address
+                                </small>
+                            </div>
+                        </div>
+
+                        <!----------------------Email-Validation-If--Valid------------>
+                        <div *ngIf="!email.errors.email && !email.errors.required" class="text-success">
+                            <small>valid</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group mt-2 ">
+                        <label for="Password">Password:</label>
+                        <input type="password "
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Password" formControlName="password">
+
+
+                        <!----------------------------Password-Input- Validation-IF-invalid--------------------->
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                            <div *ngIf="password.errors.required">
+                                <small>Please insert a valid Password</small>
+                            </div>
+
+                            <div *ngIf="password.errors.minlength || password.errors.maxlength">
+                                <small>
+                                    Password allows between 3 to 12 character
+                                </small>
+                            </div>
+                        </div>
+                        <!----------------------------VALID-->
+                        <div *ngIf="!password.errors" class="text-success">
+                            <small>valid</small>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <label for="Password"> Confirm Password:</label>
+                        <input type="password "
+                            class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                            id="Password" formControlName="cpassword">
+
+                    </div>
+
+
+
+
+                    <button type="button" class="btn btn-primary btn-block submit"
+                        style="font-size: 20px; font-weight: bold;" (click)="RegisterHere()">Submit</button>
+                </div>
+
+                <!------------------------------forgotpassword----------------------->
+                <div class="p-1" style="display: flex; justify-content:center; ">
+
+                    <div class="d-flex">
+
+                        <h6 class="ml-2">
+                            <a routerLink="." (click)="LoginPage()">You have Already an Account?</a>
+                        </h6>
+
+                    </div>
+                </div>
+
+
+                <!------------------------------Google faceebook signup----------------------->
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,56 @@
+.mbox-wrap{
+    background-image: url("src/assets/bg.png");
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.mbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50vw;
+    
+    background-color: slateblue;
+
+}
+
+.login-box{
+       flex: 6;
+       height: 100%;
+       
+
+   }
+
+.logo-box{
+    flex: 5;
+    height: 100%;
+    background-color: springgreen;
+    }
+
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:skyblue;
+    color: royalblue;
+}
+
+.submit{
+    background:linear-gradient(to left,skyblue, deeppink, royalblue);
+}
+
+
+
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+    
+}
+

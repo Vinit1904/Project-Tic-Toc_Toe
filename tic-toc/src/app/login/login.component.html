@@ -1,0 +1,140 @@
+<div class="container-fluid ">
+    <div class="row mbox-wrap ">
+
+        <div class="col-12 col-md-6 mx-0 mbox">
+            <!--logo-->
+            <div class="logo-box d-none d-xl-block">
+                <img src="assets/tic.gif" alt="" srcset="">
+            </div>
+
+
+            <!--Login-->
+            <div class="login-box bg-warning ">
+                <div class="heading p-1">
+                    <h1>Login</h1>
+                </div>
+
+
+                <div class="bg-light mx-1 mt-1">
+
+                    <!------------------------------form----------------------->
+                    <div class="form-group" [formGroup]="loginform">
+                        <!---------------Email--------------------------------------------->
+                        <div class="form-group">
+                            <!----------------------------Email-Input--------------------->
+                            <label for="Email">Email:</label>
+                            <input type="email"
+                                class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                                id="Email" formControlName="email">
+
+
+                            <!----------------------------Email-Input- Validation-IF-invalid--------------------->
+
+
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                                <div *ngIf="email.errors.required">
+                                    <small>Email is Mandatory</small>
+
+                                </div>
+
+                                <div *ngIf="email.errors.email">
+                                    <small>Please insert a valid email address</small>
+
+                                </div>
+                                <!--
+                                <div *ngIf="email.errors && email.errors.pattern">
+                                    <small>
+                                        Invalid email address
+                                    </small>
+                                </div>
+                                -->
+                            </div>
+
+                            <!----------------------Email-Validation-If--Valid------------>
+                            <div *ngIf="!email.errors.email && !email.errors.required" class="text-success">
+                                <small>valid</small>
+                            </div>
+                        </div>
+
+                        <!----------------passsword--------------------------------------------->
+
+                        <div class="form-group ">
+                            <!-----------------------Password-Input---------->
+                            <label for="Password">Password:</label>
+                            <input type="password"
+                                class="form-control border border-success border-top-0 border-left-0 border-right-0"
+                                id="Password" formControlName="password" required />
+
+                            <!-----------------------Password-Validation -if invalid---------->
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                                <div *ngIf="password.errors.required">
+                                    <small>Please insert a valid password</small>
+                                </div>
+
+                                <div *ngIf="password.errors.minlength || password.errors.maxlength">
+                                    <small>
+                                        Password allows between 3 to 12 character
+                                    </small>
+                                </div>
+                            </div>
+                            <!-----------------------Password-Validation -if valid---------->
+                            <div *ngIf="!password.errors" class="text-success">
+                                <small>valid</small>
+                            </div>
+
+                        </div>
+
+                        <!-------------Checkbox--------------------------------------------->
+
+                        <!-------------button--------------------------------------------->
+                        <button type="button" class="btn btn-primary btn-block submit"
+                            style="font-size: 20px; font-weight: bold;" (click)="loginHere()">Submit</button>
+                    </div>
+
+                    <!------------------------------forgotpassword----------------------->
+                    <div style="display: flex; justify-content: space-between;">
+                        <!----------------forgot-page-routing------------>
+                        <div>
+                            <h6><a routerLink="." (click)="ForgotPage()" href="">Forgot Password?</a> </h6>
+                        </div>
+
+
+                        <!----------------Signup-page-routing------------>
+                        <div>
+                            <h6 class="text-muted"> Don't have account?
+                            </h6>
+                            <h6 class="p-0">
+                                <a routerLink="." (click)="RegisterPage()">SignUp</a>
+                            </h6>
+
+                        </div>
+                    </div>
+
+                    <!------------------------------OR----------------------->
+                    <div style="display: flex; justify-content: center;">
+                        <h5>OR</h5>
+                    </div>
+
+                    <!------------------------------Google faceebook signup----------------------->
+
+                    <div style="display:flex; justify-content: center;">
+
+                        <button type="button" class="btn btn-danger  m-2">
+                            <fa-icon [icon]="faGoogle" class="m-1"></fa-icon>Google
+                        </button>
+
+                        <button type="button" class="btn btn-primary  m-2">
+                            <fa-icon [icon]="fafacebook" class="m-1"></fa-icon>facebook
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
